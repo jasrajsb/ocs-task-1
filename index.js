@@ -10,7 +10,7 @@ element.addEventListener('submit', event => {
   var m = document.getElementById('m').value;
   var n = document.getElementById('n').value;
   if(org===''){
-    console.log('ye');
+    ////console.log('ye');
     invalidOrg();
      document.getElementById('org').parentElement.classList.add('invalid');
   } else{
@@ -24,7 +24,7 @@ element.addEventListener('submit', event => {
           return res.json()
 
         }).then((data)=>{
-          console.log('hello');
+          ////console.log('hello');
 
           var arr = [];
           var promises = [];
@@ -38,11 +38,11 @@ element.addEventListener('submit', event => {
               desc:item.description||'',
               url:item.html_url
             };
-            console.log(item.description);
+            ////console.log(item.description);
             arr.push(obj);
             document.getElementById('repos').innerHTML+='<div class="repo"> <img src="./repo-logo.svg" class="inline-img" alt=""> <a href=# class="gh">'+org+'</a>/<a href=# class="gh">'+obj.name+'</a> <div class="label"> '+obj.forks+' Forks </div><br> <small class="desc">'+obj.desc+'</small><br><br> <div class="mini-button"> <button data-toggle="modal" onclick="getContributors(\''+obj.name+'\',\''+org+'\',\''+m+'\')" data-target="#exampleModalCenter" type="button" name="button">Contributors</button> </div> </div>';
           });
-          console.log(arr);
+          ////console.log(arr);
           $('#formPage').hide();
           $('#resultsPage').show();
           getpage(i+1);
@@ -63,10 +63,10 @@ var invalidOrg = ()=>{
    document.getElementById('org').addEventListener('keyup', ((e)=>{
 
      if(e.target.value==''){
-       console.log('ye1');
+       //////console.log('ye1');
        document.getElementById('org').parentElement.classList.add('invalid');
      } else{
-       console.log('ye2', e.target.value);
+       ////console.log('ye2', e.target.value);
        document.getElementById('org').parentElement.classList.remove('invalid');
      }
    }))
@@ -80,7 +80,7 @@ var getContributors =(name, org, m)=>{
     document.getElementById('data').style.display='block';
     return resd.json();
   }).then((datad)=>{
-    console.log(datad);
+    ////console.log(datad);
     elem = document.getElementById('data');
     elem.innerHTML = '';
     datad.forEach((item, i) => {
