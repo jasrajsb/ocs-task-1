@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link rel="preaconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+
+    <div class="container full-height" id='formPage'>
+      <div class="row full-height" >
+        <div class="d-none d-lg-flex col-0 col-lg-1 col-xl-2">
+        </div>
+        <div class="col-12 col-lg-10 col-xl-8">
+          <div class="main-center  full-height vertical-flex">
+            <div class="">
+              <h1>Github Organizations Explorer</h1>
+              <div class="my-2">
+                <span>by <a class='cool-link' target="_blank" href="https://github.com/jasrajsb">Jasraj Singh Bhatia</a></span>
+              </div>
+            </div>
+            <form class="" action="#" autocomplete="off" onsubmit=''>
+              <div class="my-5 full-width ">
+                <div class="">
+                  <div class="">
+                    <label for="">Organization Username</label>
+                    <div class="cool-input">
+                      <div class="prea">
+                        <img src="./gh-logo.png" alt="">
+                      </div>
+                      <input id='org' type="" name="Organization" value="" placeholder="Organization Username">
+
+                    </div>
+
+                    <div class="vertical-flex">
+                      <div class="row">
+                        <div class="col-lg-3 col-6 col-sm-4 col-md-3">
+                          <div class="d-inline-block ">
+                            <label for="">N <small>(Top Repos)</small></label>
+                            <div class="cool-input number-input">
+                              <div class="prea" ><a onclick="sub('n')">-</a></div>
+                              <input id='n' type="number" placeholder="" name="n" value=5>
+                              <div class="suff"><a onclick="add('n')">+</a></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-3 col-6 col-sm-4 col-md-3">
+                          <div class="d-inline-block ">
+                            <label for="">M <small>(Top Committees)</small></label>
+                            <div class="cool-input number-input">
+                              <div class="prea"><a onclick="sub('m')">-</a></div>
+                              <input id='m' type="number" placeholder="" name="m" value=5>
+                              <div class="suff"><a onclick="add('m')">+</a></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-lg-6 col-12 col-sm-4 col-md-6">
+                          <div class="d-block">
+                              <label class="hide" for="">N <small>(Top Committees)</small></label>
+                            <div class="cool-button">
+                              <button type="submit" name="button">
+                                Fetch Data
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class=" full-heright " id='resultsPage'>
+      <div class="">
+        <!-- <h5>Github Organizations Explorer</h5> -->
+        <nav class="navbar navbar-light ">
+          <span class="navbar-brand mb-0 h1 m-auto m-md-0">Github Organizations Explorer</span>
+        </nav>
+
+        <div class="container my-3 pb-3">
+          <div class="back-button mb-4">
+            <button type="button" name="button">< Back</button>
+          </div>
+          <span>Top </span> <span id='nval'></span> <span> Repositories of <a target="_blank" id='orgval' class='cool-link'></a> are:</span>
+
+
+          <div class="" id='repos'>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body main-center">
+
+        <div id='loading' class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+        <div class="" id='data'>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;500;700;800;900&display=swap" rel="stylesheet">
+    <script src="./index.js" charset="utf-8"></script>
+  </body>
+</html>

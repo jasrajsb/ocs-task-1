@@ -1,0 +1,268 @@
+
+/*class main-center will center elements along main axis of flex*/
+.main-center{
+  display: flex;
+  justify-content: center;
+}
+/*class cross-center will center elements along cross axis of flex*/
+.cross-center{
+  display: flex;
+  align-items: center;
+}
+/* class full-height will make elements to occupy complete available height */
+.full-height{
+  height: 100%;
+}
+/* class full-width will make elements to occupy complete available width */
+.full-width{
+  width: 100%
+}
+/* class vertical-flex makes a flex vertical */
+.vertical-flex{
+  flex-direction: column;
+}
+
+*{
+  font-family: 'Poppins', sans-serif;
+}
+body{
+   height: 100vh; /*to occupy complete height of screen */
+   /* color: rgb(60, 72, 82); */
+}
+
+h1{
+  font-weight: 600;
+}
+
+a.cool-link{
+    line-height: 150%;
+    font-size: 1.1em;
+    font-weight: 500;
+    display: inline-block;
+    border-width: 0px 0px 1px;
+    border-style: dashed;
+    color: rgb(8, 189, 128) !important;
+    border-color: rgb(8, 189, 128);
+    padding-bottom: 4px;
+    cursor: pointer;
+}
+a.cool-link:hover{
+  color: rgb(8, 189, 128) !important;
+  text-decoration: none;
+}
+
+.cool-input{
+  width: 100%;
+  display: flex;
+  padding: 10px 20px;
+  border: 0px solid black;
+  border-radius: 10px;
+  background: #f8f8f8;
+  margin-bottom: 20px;
+}
+.cool-input>input{
+  width: 100%;
+  border:0;
+  background: #f8f8f8;
+
+
+}
+.cool-input>.prea,.cool-input>.suff {
+
+  width: 1.5em;
+  display: inline;
+  font-weight: 600;
+  font-size: larger;
+  cursor: pointer;
+}
+.cool-input>.prea {
+  margin-right: 15px;
+}
+.cool-input>.suff{
+  margin-left: 15px;
+
+}
+.number-input>.prea {
+  margin-right: 0px;
+}
+.number-input>.suff{
+  margin-left: 0px;
+
+}
+.cool-input>.prea>img{
+  height: 1.5em;
+}
+.cool-input>input:focus{
+  outline:none;
+}
+input::placeholder{
+  font-weight: 400;
+}
+label{
+  font-size: small;
+  font-weight: 600;
+}
+.number-input{
+  /* width: calc(4.5rem + 60px); */
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+}
+.number-input>input{
+      display: flex;
+      justify-content: center;
+      width: calc(1.5rem + 30px);
+      text-align: center;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  display: none
+}
+.cool-button>button{
+    width: 100%;
+    height: 100%;
+    padding: 10px 25px;
+    border: 0;
+    border-radius: 10px;
+    background: rgb(8, 189, 128);
+    color: #fff;
+    font-size: large;
+    font-weight: 500;
+    cursor: pointer;
+}
+.cool-button>button:focus{
+    border:0;
+    outline: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+.hide{
+    opacity: 0;
+}
+.navbar-brand{
+  font-weight: 600;
+}
+.inline-img{
+  height: 1.5em;
+  margin: 5px;
+}
+#resultsPage{
+  display: none;
+}
+.back-button>button{
+  border: 0;
+  background: #f8f8f8f8;
+  padding: 10px 25px;
+  font-size: larger;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+}
+a.gh{
+  color:#0366d6;
+  font-size: LARGER;
+}
+.repo{
+  padding: 20px 30px;
+  margin: 20px 0;
+  background: #f8f8f8;
+  border-radius: 10px;
+}
+.label{
+  display: inline;
+  float: right;
+  color: #000;
+  background-color: #e9e9e9;
+  font-size: smaller;
+  padding: 2px 10px;
+  border-radius: 5px;
+  font-weight: 600;
+}
+.mini-button>button{
+    background: rgb(8 189 128 / 10%) !important;
+    color: rgb(8, 189, 128) !important;
+    font-size: smaller;
+    padding: 5px 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    border: 0;
+    cursor: pointer;
+    text-decoration: cap;
+    text-transform: capitalize;
+}
+button:focus{
+  border:0;
+  outline: none;
+}
+.modal-header{
+  border-bottom:0;
+}
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.lds-ellipsis div {
+  position: absolute;
+  top: 33px;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #000;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+.lds-ellipsis div:nth-child(1) {
+  left: 8px;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(2) {
+  left: 8px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(3) {
+  left: 32px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+.lds-ellipsis div:nth-child(4) {
+  left: 56px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(24px, 0);
+  }
+}
+.invalid{
+  border: 2px solid red;
+}
+.invalidmsg{
+  display: none;
+}
+.invalid>.invalidmsg{
+  display: flex;
+}
