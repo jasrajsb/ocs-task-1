@@ -46,7 +46,7 @@ element.addEventListener('submit', event => {
           $('#formPage').hide();
           $('#resultsPage').show();
           getpage(i+1);
-          setTimeout(()=>{
+          setInterval(()=>{
             $('#exampleModalCenter').modal('hide');
           },500)
         }).catch(()=>{
