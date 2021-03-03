@@ -48,7 +48,7 @@ element.addEventListener('submit', event => {
           getpage(i+1);
           setTimeout(()=>{
             $('#exampleModalCenter').modal('hide');
-          },100)
+          },500)
         }).catch(()=>{
           invalidOrg();
         });
