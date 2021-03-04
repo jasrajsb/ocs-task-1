@@ -1,10 +1,11 @@
 const element = document.querySelector('form');
+var to;
 element.addEventListener('submit', event => {
   event.preventDefault();
   if(org===''){
 
   }
-var to;
+
   document.getElementById('repos').innerHTML='';
   var org = document.getElementById('org').value;
   var m = document.getElementById('m').value;
