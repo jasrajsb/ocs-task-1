@@ -47,12 +47,14 @@ element.addEventListener('submit', event => {
           $('#formPage').hide();
           $('#resultsPage').show();
           getpage(i+1);
-          to = setInterval(()=>{
-            $('#exampleModalCenter').modal('hide');
-          },500)
+
         }).catch(()=>{
           invalidOrg();
         });
+      } else{
+        to = setInterval(()=>{
+          $('#exampleModalCenter').modal('hide');
+        },500)
       }
     }
     getpage(1);
