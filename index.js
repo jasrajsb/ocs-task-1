@@ -4,7 +4,7 @@ element.addEventListener('submit', event => {
   if(org===''){
 
   }
-
+var to;
   document.getElementById('repos').innerHTML='';
   var org = document.getElementById('org').value;
   var m = document.getElementById('m').value;
@@ -46,7 +46,7 @@ element.addEventListener('submit', event => {
           $('#formPage').hide();
           $('#resultsPage').show();
           getpage(i+1);
-          setInterval(()=>{
+          to = setInterval(()=>{
             $('#exampleModalCenter').modal('hide');
           },500)
         }).catch(()=>{
@@ -73,6 +73,7 @@ var invalidOrg = ()=>{
 }
 
 var getContributors =(name, org, m)=>{
+  clearInterval(to);
   document.getElementById('loading').style.display='block';
   document.getElementById('data').style.display='none';
   fetch('https://api.github.com/repos/'+org+'/'+name+'/contributors?per_page='+(m>100?100:m)+'&page='+(m>100?(Math.floor(m/100)+1):1)).then((resd)=>{
